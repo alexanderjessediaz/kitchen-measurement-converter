@@ -4,11 +4,12 @@ import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Media from 'react-bootstrap/Media';
 import Jumbotron from 'react-bootstrap/Jumbotron'
-import Table from 'react-bootstrap/Table';
+// import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import measuringspoons from './images/measuringspoons.jpg';
+import calculationTable from "./components/calculationTable"
 
 
 
@@ -51,7 +52,6 @@ function App() {
                   </Form.Group>
                   <Card.Title>
                     <Card.Text>
-
                     </Card.Text>
                   </Card.Title>
                 </Card.Body>
@@ -72,6 +72,7 @@ function App() {
                     <Card.Text>
                     </Card.Text>
                   </Card.Title>
+                  
                 </Card.Body>
               </Card>
             </Col>
@@ -96,24 +97,9 @@ function App() {
           </CardDeck>
         </Row>
         <Row className="justify-content-md-center">
-          <Table striped bordered hover size="sm">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Cup</th>
-                <th>Tablespoon</th>
-                <th>Teaspoon</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-    </Table>
+          <div>
+          {calculationTable}
+          </div>
         </Row>
       </Container>
     </div>
