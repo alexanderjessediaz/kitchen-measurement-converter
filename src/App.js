@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row'
 // import Col from 'react-bootstrap/Col';
 import measuringspoons from './images/measuringspoons.jpg';
 import CalculationTable from "./components/CalculationTable";
-import UtensilCards from './components/UtensilCards';
+import UtensilCard from './components/UtensilCard';
 
 
 
@@ -18,7 +18,7 @@ import UtensilCards from './components/UtensilCards';
 class App extends Component {
 
   state = {
-    measurementTools: [
+    measurementUtensils: [
       {
         name: "Cup",
         measurement: 0
@@ -59,9 +59,9 @@ class App extends Component {
               </Container>
             </Jumbotron>
             <Row className="justify-content-md-center">
-                <UtensilCards/>
+                <UtensilCard measurementUtensils={this.state.measurementUtensils}/>
             </Row>
-            <CalculationTable/>
+            <CalculationTable measurementUtensils={this.state.measurementUtensils}/>
         </Container>
       </div>
 
