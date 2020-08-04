@@ -57,7 +57,7 @@ class UtensilCard extends Component {
               <Form.Control
                 as="input"
                 onChange={this.handleChange}
-                type="integer"
+                type="number"
                 size="lg"
                 id="measurementInput"
                 placeholder="enter measurement"/>
