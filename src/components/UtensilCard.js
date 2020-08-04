@@ -1,17 +1,41 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 
-function UtensilCard(props){
+class UtensilCard extends Component {
+
+  state = {
+    utensilButton: []
+  }
+
+  // 1 cup = 16tblsp && 48 Tsp
+
+  // cupToTablespoon = () => 
+  // cupToTeaspoon
+
+  // tablespoonToTeaspoon
+  // tablespoonToCup
+
+  // teaspoonToCup
+  // teaspoonToTablespoon
+
+  handleChange = (event) => {
+    this.setState({
+
+    })
+  }
+
+
+  render(){
+
     return (        
       <Card>
         <Card.Body>
         <Form.Group>
           <Form.Row>
-            
           <>
             <div className="mb-2">
               {["left"].map((direction) => (
@@ -30,8 +54,13 @@ function UtensilCard(props){
               ))}
             </div>
           </>
-
-              <Form.Control size="lg" id="cup" placeholder="enter measurement" />
+              <Form.Control
+                as="input"
+                onChange={this.handleChange}
+                type="integer"
+                size="lg"
+                id="measurementInput"
+                placeholder="enter measurement"/>
             </Form.Row>
           </Form.Group>
           <Card.Title>
@@ -41,6 +70,7 @@ function UtensilCard(props){
         </Card.Body>
       </Card>
     )
+  }
 }
 
 export default UtensilCard
