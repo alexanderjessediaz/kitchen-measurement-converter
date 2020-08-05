@@ -36,8 +36,9 @@ class UtensilCard extends Component {
   }
 
 
-  selectCup = (event) => {
+  setMeasurment = event => {
     this.setState({
+      measurement: event.target.value
     })
   }
 
@@ -74,7 +75,7 @@ class UtensilCard extends Component {
                 size="lg"
                 id="measurementInput"
                 placeholder="enter measurement"
-                onChange={()=> this.setState({ measurement: this.value})}
+                onChange={this.setMeasurment}
                 value={this.state.measurement}
                 />
             </Form.Row>
