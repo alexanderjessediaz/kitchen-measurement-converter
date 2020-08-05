@@ -1,3 +1,13 @@
+// 1 cup = 16tblsp && 48 Tsp
+
+// cupToTablespoon = () => 
+// cupToTeaspoon
+
+// tablespoonToTeaspoon
+// tablespoonToCup
+
+// teaspoonToCup
+// teaspoonToTablespoon
 import React, {Component} from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -8,43 +18,52 @@ import Form from 'react-bootstrap/Form';
 class UtensilCard extends Component {
 
   state = {
-    
-    cup:"cup",
-    tbsp:"tbsp",
-    tsp:"tsp",
-    measurement:0
-    
+    measurement:0,
+    utensilBtn: [
+      {
+        cup:"cup",
+        isCupSelected: false
+      },{
+        tbsp: "tbsp",
+        isTbspSelected: false
+      },{
+        tsp: "tsp", 
+        isTspSelected: false
+      }
+    ]
   };
 
 
 
-  // 1 cup = 16tblsp && 48 Tsp
-
-  // cupToTablespoon = () => 
-  // cupToTeaspoon
-
-  // tablespoonToTeaspoon
-  // tablespoonToCup
-
-  // teaspoonToCup
-  // teaspoonToTablespoon
-
-  setUtilBtn = () => {
+  
+  setUtilToCup = () => {
     this.setState({
+      isCupSelected: true,
 
     })
   }
 
+  setUtilToTbsp = () => {
+    this.setState({
+      isTbspSelected:true
+    })
+  }
 
+  setUtilToTsp = () => {
+    this.setState({
+      isTspSelected:true
+    })
+  }
+  
   setMeasurment = event => {
     this.setState({
       measurement: event.target.value
     })
   }
-
-
+  
+  
   render(){
-
+    
     return (        
       <Card>
         <Card.Body>
@@ -54,15 +73,22 @@ class UtensilCard extends Component {
             <div className="mb-2">
               {["left"].map((direction) => (
                 <DropdownButton
+                  onClick={ e => {
+                    if (e.target.id === "Cup")
+                    this.setState({
+                      isCupSelected:true,
+                    })
+                }}
                   as={ButtonGroup}
                   key={direction}
                   id={`dropdown-button-drop-${direction}`}
                   drop={direction}
                   variant="primary"
-                  title={this.state.cupName}
+                  title="Select a utensil"
+                  // onSelect={this.setUtilToCup ? this.state.utensilBtn.cup : 'select Utensil' } 
                   // onChange={() => this.setState({})}
                 >
-                  <Dropdown.Item eventKey="Cup">Cup</Dropdown.Item>
+                  <Dropdown.Item eventKey="Cup" id="Cup">Cup</Dropdown.Item>
                   <Dropdown.Item eventKey="Tbl">Tablespoon</Dropdown.Item>
                   <Dropdown.Item eventKey="Tsp">Teaspoon</Dropdown.Item>
                 </DropdownButton>
