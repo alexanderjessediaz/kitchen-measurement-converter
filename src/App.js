@@ -18,20 +18,20 @@ import UtensilCard from './components/UtensilCard';
 class App extends Component {
 
   state = {
-    measurementUtensils: [
-      {
-        name: "Cup",
-        measurement: 0
-      },
-      {
-        name: "Tablespoon",
-        measurement: 0
-      },
-      {
-        name: "Teaspoon",
-        measurement: 0
-      },
-    ]
+    // measurementUtensils: [
+    //   {
+    //     name: "Cup",
+    //     measurement: 0
+    //   },
+    //   {
+    //     name: "Tablespoon",
+    //     measurement: 0
+    //   },
+    //   {
+    //     name: "Teaspoon",
+    //     measurement: 0
+    //   },
+    // ]
   }
 
   

@@ -1,15 +1,22 @@
 import React, {Component} from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 
 class UtensilCard extends Component {
 
   state = {
-    utensilButton: []
-  }
+    
+    cup:"cup",
+    tbsp:"tbsp",
+    tsp:"tsp",
+    measurement:0
+    
+  };
+
+
 
   // 1 cup = 16tblsp && 48 Tsp
 
@@ -22,9 +29,15 @@ class UtensilCard extends Component {
   // teaspoonToCup
   // teaspoonToTablespoon
 
-  handleChange = (event) => {
+  setUtilBtn = () => {
     this.setState({
 
+    })
+  }
+
+
+  selectCup = (event) => {
+    this.setState({
     })
   }
 
@@ -40,27 +53,30 @@ class UtensilCard extends Component {
             <div className="mb-2">
               {["left"].map((direction) => (
                 <DropdownButton
-                  as={Button}
+                  as={ButtonGroup}
                   key={direction}
                   id={`dropdown-button-drop-${direction}`}
                   drop={direction}
                   variant="primary"
-                  title="Select Utensil"
+                  title={this.state.cupName}
+                  // onChange={() => this.setState({})}
                 >
-                  <Dropdown.Item eventKey="1">Cup</Dropdown.Item>
-                  <Dropdown.Item eventKey="2">Tablespoon</Dropdown.Item>
-                  <Dropdown.Item eventKey="3">Teaspoon</Dropdown.Item>
+                  <Dropdown.Item eventKey="Cup">Cup</Dropdown.Item>
+                  <Dropdown.Item eventKey="Tbl">Tablespoon</Dropdown.Item>
+                  <Dropdown.Item eventKey="Tsp">Teaspoon</Dropdown.Item>
                 </DropdownButton>
               ))}
             </div>
           </>
               <Form.Control
                 as="input"
-                onChange={this.handleChange}
                 type="number"
                 size="lg"
                 id="measurementInput"
-                placeholder="enter measurement"/>
+                placeholder="enter measurement"
+                onChange={()=> this.setState({ measurement: this.value})}
+                value={this.state.measurement}
+                />
             </Form.Row>
           </Form.Group>
           <Card.Title>
@@ -72,5 +88,6 @@ class UtensilCard extends Component {
     )
   }
 }
+
 
 export default UtensilCard
