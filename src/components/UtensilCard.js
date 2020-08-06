@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -8,11 +7,10 @@ import Form from 'react-bootstrap/Form';
 
 class UtensilCard extends Component {
 
+  formInput = () => {
+    console.log(this.input.value);
+  }
 
-
-  
-  
-  
   render(){
     
     return (        
@@ -31,11 +29,15 @@ class UtensilCard extends Component {
                 variant="primary"
                 title="Select a utensil"
                 >
-                  <Dropdown.Item eventKey="Cup"
-                   id="Cup"
-                   onSelect={this.setUtilToCup}
-                   >Cup</Dropdown.Item>
-                  <Dropdown.Item eventKey="Tbl">Tablespoon</Dropdown.Item>
+                  <Dropdown.Item 
+                    eventKey="Cup"
+                    id="Cup"
+                    onSelect={this.formInput}
+                  >
+                  Cup</Dropdown.Item>
+
+
+                  <Dropdown.Item eventKey="Tbsp">Tablespoon</Dropdown.Item>
                   <Dropdown.Item eventKey="Tsp">Teaspoon</Dropdown.Item>
                 </DropdownButton>
               ))}
@@ -45,15 +47,13 @@ class UtensilCard extends Component {
                 as="input"
                 type="number"
                 size="lg"
-                id="measurementInput"
                 placeholder="enter measurement"
+                ref={(ref) => {this.input = ref}}
+                
                 />
+
             </Form.Row>
           </Form.Group>
-          <Card.Title>
-            <Card.Text>
-            </Card.Text>
-          </Card.Title>
         </Card.Body>
       </Card>
     )

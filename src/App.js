@@ -26,9 +26,9 @@ class App extends Component {
     })
   }
   
-    // cupMeasurementDisplay = () => {
+    cupMeasurementDisplay = event => {
 
-    // }
+    }
   
 
 
@@ -56,9 +56,20 @@ class App extends Component {
               </Container>
             </Jumbotron>
             <Row className="justify-content-md-center">
-                <UtensilCard inputMeasurment={this.state.inputMeasurement} />
+                <UtensilCard
+                  inputMeasurment={this.state.inputMeasurement}
+                  setUtensilMeasurment={this.setUtensilMeasurment}
+                  cupMeasurement={this.state.cupMeasurement} 
+                  tbspMeasurement={this.state.tbspMeasurement} 
+                  tspMeasurement={this.state.tspMeasurement}
+                   />
             </Row>
-            <CalculationTable />
+            <CalculationTable
+              inputMeasurment={this.state.inputMeasurement}
+              cupMeasurement={this.state.cupMeasurement} 
+              tbspMeasurement={this.state.tbspMeasurement} 
+              tspMeasurement={this.state.tspMeasurement}
+            />
         </Container>
       </div>
 
