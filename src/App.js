@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Media from 'react-bootstrap/Media';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row'
+import Row from 'react-bootstrap/Row';
 import measuringspoons from './images/measuringspoons.jpg';
 import CalculationTable from "./components/CalculationTable";
 import UtensilCard from './components/UtensilCard';
@@ -13,25 +13,16 @@ import UtensilCard from './components/UtensilCard';
 class App extends Component {
 
   state = {
-    inputMeasurement:0,
+    measurementInput:0,
     cupMeasurement:0,
     tbspMeasurement:0,
     tspMeasurement:0
     
   };
 
-  setUtensilMeasurment = event => {
-    this.setState({
-      inputMeasurement: event.target.value
-    })
-  }
   
-    cupMeasurementDisplay = event => {
-
-    }
+      
   
-
-
   render(){
     return (
       <div className="App">
@@ -49,7 +40,7 @@ class App extends Component {
                   <Media.Body>
                     <h5>Kitchen Measurement Converter</h5>
                     <p>
-                      Enter an amount for one of the measurements and see the converted measuremtns for all of the others.
+                      Enter a measurement then select utensil and see all of the converted measuremtns in the table below.
                     </p>
                   </Media.Body>
                 </Media>
@@ -57,19 +48,17 @@ class App extends Component {
             </Jumbotron>
             <Row className="justify-content-md-center">
                 <UtensilCard
-                  inputMeasurment={this.state.inputMeasurement}
-                  setUtensilMeasurment={this.setUtensilMeasurment}
-                  cupMeasurement={this.state.cupMeasurement} 
-                  tbspMeasurement={this.state.tbspMeasurement} 
-                  tspMeasurement={this.state.tspMeasurement}
-                   />
+                  measurementInput={this.state.measurementInput}
+                />
             </Row>
             <CalculationTable
-              inputMeasurment={this.state.inputMeasurement}
-              cupMeasurement={this.state.cupMeasurement} 
-              tbspMeasurement={this.state.tbspMeasurement} 
+              measurementInput={this.state.measurementInput}
+              cupMeasurement={this.state.cupMeasurement}
+              tbspMeasurement={this.state.tbspMeasurement}
               tspMeasurement={this.state.tspMeasurement}
+              displayCupMeasurement={this.displayCupMeasurement}
             />
+    
         </Container>
       </div>
 

@@ -1,17 +1,14 @@
-import React, {Component} from 'react'
-import Table from 'react-bootstrap/Table'
+import React from 'react';
+import Table from 'react-bootstrap/Table';
+// import UtensilCard from './UtensilCard'
 
-class CalculationTable extends Component {
-
-    state = {
-        cupMeasurement:0,
-        tbspMeasurement:0,
-        tspMeasurement:0
-    }
+const CalculationTable = props => {
+    const {displayCupMeasurement} = props
 
 
 
-    render(){
+    console.log(props)
+    
         return (
             <Table striped bordered hover>
                 <thead>
@@ -23,20 +20,20 @@ class CalculationTable extends Component {
                 <tbody>
                     <tr>
                     <td>Cup</td>
-                    <td>{this.state.cupMeasurement}</td>
+                    <td>{displayCupMeasurement}</td>
                     </tr>
                     <tr>
                     <td>Tablespoon</td>
-                    <td>{this.state.tbspMeasurement}</td>
+                    <td></td>
                     </tr>
                     <tr>
                     <td>Teaspoon</td>
-                    <td>{this.state.tspMeasurement}</td>
+                    <td></td>
                     </tr>
                 </tbody>
             </Table>
 
 )
     }
-}
+
 export default CalculationTable

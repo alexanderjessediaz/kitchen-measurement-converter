@@ -4,12 +4,9 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
+// import CalculationTable from './CalculationTable';
 
 class UtensilCard extends Component {
-
-  formInput = () => {
-    console.log(this.input.value);
-  }
 
   render(){
     
@@ -27,12 +24,13 @@ class UtensilCard extends Component {
                 id={`dropdown-button-drop-${direction}`}
                 drop={direction}
                 variant="primary"
-                title="Select a utensil"
+                title="cup"
                 >
                   <Dropdown.Item 
-                    eventKey="Cup"
+                    eventKey={this.displayCupMeasurement}
                     id="Cup"
-                    onSelect={this.formInput}
+                    onSelect={this.displayCupMeasurement}
+                    active
                   >
                   Cup</Dropdown.Item>
 
@@ -49,13 +47,15 @@ class UtensilCard extends Component {
                 size="lg"
                 placeholder="enter measurement"
                 ref={(ref) => {this.input = ref}}
-                
                 />
 
             </Form.Row>
           </Form.Group>
         </Card.Body>
       </Card>
+      
+       
+      
     )
   }
 }
