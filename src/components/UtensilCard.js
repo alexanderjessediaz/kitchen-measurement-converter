@@ -37,6 +37,7 @@ class UtensilCard extends Component {
 
   
   setUtilToCup = () => {
+    console.log("test")
     this.setState({
       isCupSelected: true,
 
@@ -73,12 +74,6 @@ class UtensilCard extends Component {
             <div className="mb-2">
               {["left"].map((direction) => (
                 <DropdownButton
-                  onClick={ e => {
-                    if (e.target.id === "Cup")
-                    this.setState({
-                      isCupSelected:true,
-                    })
-                }}
                   as={ButtonGroup}
                   key={direction}
                   id={`dropdown-button-drop-${direction}`}
@@ -88,7 +83,10 @@ class UtensilCard extends Component {
                   // onSelect={this.setUtilToCup ? this.state.utensilBtn.cup : 'select Utensil' } 
                   // onChange={() => this.setState({})}
                 >
-                  <Dropdown.Item eventKey="Cup" id="Cup">Cup</Dropdown.Item>
+                  <Dropdown.Item eventKey="Cup"
+                   id="Cup"
+                   onSelect={this.setUtilToCup}
+                   >Cup</Dropdown.Item>
                   <Dropdown.Item eventKey="Tbl">Tablespoon</Dropdown.Item>
                   <Dropdown.Item eventKey="Tsp">Teaspoon</Dropdown.Item>
                 </DropdownButton>
