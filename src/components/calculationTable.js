@@ -9,6 +9,8 @@ class CalculationTable extends Component {
         tspMeasurement:0
     }
 
+
+
     render(){
         return (
             <Table striped bordered hover>
@@ -21,15 +23,15 @@ class CalculationTable extends Component {
                 <tbody>
                     <tr>
                     <td>Cup</td>
-                    <td></td>
+                    <td>{this.state.cupMeasurement}</td>
                     </tr>
                     <tr>
                     <td>Tablespoon</td>
-                    <td></td>
+                    <td>{this.state.tbspMeasurement}</td>
                     </tr>
                     <tr>
                     <td>Teaspoon</td>
-                    <td></td>
+                    <td>{this.state.tspMeasurement}</td>
                     </tr>
                 </tbody>
             </Table>

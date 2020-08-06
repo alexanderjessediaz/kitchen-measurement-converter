@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-// import CardDeck from 'react-bootstrap/CardDeck';
-// import Card from 'react-bootstrap/Card';
-// import Form from 'react-bootstrap/Form';
 import Media from 'react-bootstrap/Media';
 import Jumbotron from 'react-bootstrap/Jumbotron'
-// import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
-// import Col from 'react-bootstrap/Col';
 import measuringspoons from './images/measuringspoons.jpg';
 import CalculationTable from "./components/CalculationTable";
 import UtensilCard from './components/UtensilCard';
@@ -18,22 +13,22 @@ import UtensilCard from './components/UtensilCard';
 class App extends Component {
 
   state = {
-    // measurementUtensils: [
-    //   {
-    //     name: "Cup",
-    //     measurement: 0
-    //   },
-    //   {
-    //     name: "Tablespoon",
-    //     measurement: 0
-    //   },
-    //   {
-    //     name: "Teaspoon",
-    //     measurement: 0
-    //   },
-    // ]
-  }
+    inputMeasurement:0,
+    cupMeasurement:0,
+    tbspMeasurement:0,
+    tspMeasurement:0
+    
+  };
 
+  setUtensilMeasurment = event => {
+    this.setState({
+      inputMeasurement: event.target.value
+    })
+  }
+  
+    // cupMeasurementDisplay = () => {
+
+    // }
   
 
 
@@ -61,9 +56,9 @@ class App extends Component {
               </Container>
             </Jumbotron>
             <Row className="justify-content-md-center">
-                <UtensilCard measurementUtensils={this.state.measurementUtensils}/>
+                <UtensilCard inputMeasurment={this.state.inputMeasurement} />
             </Row>
-            <CalculationTable measurementUtensils={this.state.measurementUtensils}/>
+            <CalculationTable />
         </Container>
       </div>
 
