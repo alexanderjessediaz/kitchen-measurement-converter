@@ -17,7 +17,6 @@ class App extends Component {
     cupMeasurement:0,
     tbspMeasurement:0,
     tspMeasurement:0
-    
   };
 
   
@@ -56,9 +55,7 @@ class App extends Component {
               cupMeasurement={this.state.cupMeasurement}
               tbspMeasurement={this.state.tbspMeasurement}
               tspMeasurement={this.state.tspMeasurement}
-              displayCupMeasurement={this.displayCupMeasurement}
             />
-    
         </Container>
       </div>
 

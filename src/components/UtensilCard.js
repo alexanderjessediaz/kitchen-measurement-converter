@@ -9,19 +9,25 @@ class UtensilCard extends Component {
 
   render(){
     return (        
-       <Container>
+       <Container fluid="sm">
         <InputGroup className="mb-3">
           <DropdownButton
             as={InputGroup.Prepend}
             variant="outline-secondary"
             title="Select a utensil"
             id="input-group-dropdown-1"
+
           >
             <Dropdown.Item href="#">Cup</Dropdown.Item>
             <Dropdown.Item href="#">Tablespoon</Dropdown.Item>
             <Dropdown.Item href="#">Teaspoon</Dropdown.Item>
           </DropdownButton>
-          <Form.Control aria-describedby="basic-addon1" />
+          <Form.Control 
+            
+            aria-describedby="basic-addon1"
+            placeholder="enter measurement"
+            type="number"
+           />
         </InputGroup>
        </Container>
       
