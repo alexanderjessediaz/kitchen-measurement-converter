@@ -3,12 +3,7 @@ import Table from 'react-bootstrap/Table';
 // import UtensilCard from './UtensilCard'
 
 const CalculationTable = props => {
-    const {displayCupMeasurement} = props
 
-
-
-    console.log(props)
-    
         return (
             <Table striped bordered hover>
                 <thead>
@@ -20,7 +15,9 @@ const CalculationTable = props => {
                 <tbody>
                     <tr>
                     <td>Cup</td>
-                    <td>{displayCupMeasurement}</td>
+                    <td></td>
+
+                    
                     </tr>
                     <tr>
                     <td>Tablespoon</td>
