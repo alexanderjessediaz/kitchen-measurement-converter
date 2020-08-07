@@ -7,7 +7,9 @@ import Container from 'react-bootstrap/Container';
 
 class UtensilCard extends Component {
   
-  
+  handleSelect = e => {
+    console.log(e)
+  }
   
   
   render(){
@@ -19,6 +21,7 @@ class UtensilCard extends Component {
             variant="outline-secondary"
             title="Select a utensil"
             id="input-group-dropdown-1"
+            onSelect={this.handleSelect}
             
             >
             <Dropdown.Item href="#">Cup</Dropdown.Item>

@@ -5,8 +5,8 @@ import "../utils/conversion-functions"
 // import { cupToTbsp } from '../utils/conversion-functions';
 
 const CalculationTable = props => {
-
-    // console.log(cupToTbsp())
+    
+    // console.log(props.cupMeasurement)
         return (
             <Container className="justify-content-center">
                 <Table striped bordered hover>
@@ -19,17 +19,15 @@ const CalculationTable = props => {
                     <tbody>
                         <tr>
                         <td>Cup</td>
-                        <td></td>
-
-                        
+                        <td>{props.cupMeasurement}</td>
                         </tr>
                         <tr>
                         <td>Tablespoon</td>
-                        <td></td>
+                        <td>{props.tbspMeasurement}</td>
                         </tr>
                         <tr>
                         <td>Teaspoon</td>
-                        <td></td>
+                        <td>{props.tspMeasurement}</td>
                         </tr>
                     </tbody>
                 </Table>

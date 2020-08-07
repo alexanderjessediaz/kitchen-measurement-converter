@@ -1,23 +1,23 @@
-  export const cupToTbsp = (measurement) =>{
-      return measurement / 8
+  export const cupToTbsp = (measurementInput) =>{
+      return measurementInput / 8
   }
 
-  export const cupToTsp = (measurement) => {
-    return measurement /48
+  export const cupToTsp = (measurementInput) => {
+    return measurementInput /48
   }
 
-  export const tbspToCup = (measurement) => {
-    return measurement * 8
+  export const tbspToCup = (measurementInput) => {
+    return measurementInput * 8
   }
 
-  export const tbspTotsp = (measurement) => {
-    return measurement / 3
+  export const tbspTotsp = (measurementInput) => {
+    return measurementInput / 3
   }
 
-  export const tspToCup = (measurement) => {
-    return measurement * 48
+  export const tspToCup = (measurementInput) => {
+    return measurementInput * 48
   }
 
-export const tspToTbsp = (measurement) => {
-  return measurement * 3
+export const tspToTbsp = (measurementInput) => {
+  return measurementInput * 3
 }
