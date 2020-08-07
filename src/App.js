@@ -19,6 +19,11 @@ class App extends Component {
     tspMeasurement:0
   };
 
+  setMeasurementInput = e => {
+    this.setState({
+      measurementInput: e.target.value
+    })
+  }
   
       
   
@@ -48,6 +53,7 @@ class App extends Component {
             <Row className="justify-content-md-center">
                 <UtensilCard
                   measurementInput={this.state.measurementInput}
+                  setMeasurementInput={this.setMeasurementInput}
                 />
             </Row>
             <CalculationTable

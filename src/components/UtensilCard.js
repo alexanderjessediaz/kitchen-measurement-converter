@@ -6,18 +6,21 @@ import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 
 class UtensilCard extends Component {
-
+  
+  
+  
+  
   render(){
     return (        
-       <Container fluid="sm">
+      <Container fluid="sm">
         <InputGroup className="mb-3">
           <DropdownButton
             as={InputGroup.Prepend}
             variant="outline-secondary"
             title="Select a utensil"
             id="input-group-dropdown-1"
-
-          >
+            
+            >
             <Dropdown.Item href="#">Cup</Dropdown.Item>
             <Dropdown.Item href="#">Tablespoon</Dropdown.Item>
             <Dropdown.Item href="#">Teaspoon</Dropdown.Item>
@@ -27,7 +30,9 @@ class UtensilCard extends Component {
             aria-describedby="basic-addon1"
             placeholder="enter measurement"
             type="number"
-           />
+            value={this.props.measurementInput}
+            onChange={this.props.setMeasurementInput}
+            />
         </InputGroup>
        </Container>
       
