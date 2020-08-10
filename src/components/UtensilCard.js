@@ -5,11 +5,10 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 
+
 class UtensilCard extends Component {
   
-  handleSelect = e => {
-    console.log(e)
-  }
+  
   
   
   render(){
@@ -21,10 +20,15 @@ class UtensilCard extends Component {
             variant="outline-secondary"
             title="Select a utensil"
             id="input-group-dropdown-1"
-            onSelect={this.handleSelect}
+            // onSelect={this.handleSelect}
             
             >
-            <Dropdown.Item href="#">Cup</Dropdown.Item>
+            <Dropdown.Item 
+              active
+              eventKey="Cup"
+              onSelect={this.props.selectCup}
+              onChange={this.props.selectCup}
+            >Cup</Dropdown.Item>
             <Dropdown.Item href="#">Tablespoon</Dropdown.Item>
             <Dropdown.Item href="#">Teaspoon</Dropdown.Item>
           </DropdownButton>

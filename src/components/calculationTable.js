@@ -6,7 +6,7 @@ import "../utils/conversion-functions"
 
 const CalculationTable = props => {
     
-    // console.log(props.cupMeasurement)
+    
         return (
             <Container className="justify-content-center">
                 <Table striped bordered hover>

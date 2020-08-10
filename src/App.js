@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import measuringspoons from './images/measuringspoons.jpg';
 import CalculationTable from "./components/CalculationTable";
 import UtensilCard from './components/UtensilCard';
+import { cupToTbsp } from './utils/conversion-functions';
 
 
 
@@ -24,8 +25,35 @@ class App extends Component {
       measurementInput: e.target.value
     })
   }
+
   
-      
+  setCupMeasurement = cupMeasurement => {
+    this.setState({
+      cupMeasurement: cupMeasurement
+    })
+  }
+  
+  setTbspMeasurement = tbspMeasurement => {
+    this.setState({
+      tbspMeasurement: tbspMeasurement
+    })
+  }
+
+  setTspMeasurement = tspMeasurement => {
+    this.setState({
+      tspMeasurement: tspMeasurement
+    })
+  }
+  
+  
+  selectCup = e => {
+    this.setState({
+      cupMeasurement: cupToTbsp(this.state.measurementInput) 
+
+    })
+    console.log(cupToTbsp(this.props.measurementInput))
+
+  }
   
   render(){
     return (
@@ -53,7 +81,15 @@ class App extends Component {
             <Row className="justify-content-md-center">
                 <UtensilCard
                   measurementInput={this.state.measurementInput}
+                  cupMeasurement={this.state.cupMeasurement}
+                  tbspMeasurement={this.state.tbspMeasurement}
+                  tspMeasurement={this.state.tspMeasurement}
+                  selectCup={this.selectCup}
                   setMeasurementInput={this.setMeasurementInput}
+                  setCupMeasurement={this.setCupMeasurement}
+                  setTbspMeasurement={this.setTbspMeasurement}
+                  setTspMeasurement={this.setTspMeasurement}
+                  
                 />
             </Row>
             <CalculationTable
@@ -61,6 +97,9 @@ class App extends Component {
               cupMeasurement={this.state.cupMeasurement}
               tbspMeasurement={this.state.tbspMeasurement}
               tspMeasurement={this.state.tspMeasurement}
+              // setCupMeasurement={this.setCupMeasurement}
+              // setTbspMeasurement={this.setTbspMeasurement}
+              // setTspMeasurement={this.setTspMeasurement}
             />
         </Container>
       </div>
