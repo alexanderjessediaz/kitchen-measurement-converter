@@ -4,6 +4,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
+import DropdownItem from 'react-bootstrap/esm/DropdownItem';
 
 
 class UtensilCard extends Component {
@@ -12,13 +13,15 @@ class UtensilCard extends Component {
   
   
   render(){
+
+    const isDropDownSelected = Dropdown.Item.active
     return (        
       <Container fluid="sm">
         <InputGroup className="mb-3">
           <DropdownButton
             as={InputGroup.Prepend}
             variant="outline-secondary"
-            title="Select a utensil"
+            title={isDropDownSelected ? DropdownItem.Item.title: "Select a utensil"}
             id="input-group-dropdown-1"
             // onSelect={this.handleSelect}
             
@@ -26,11 +29,12 @@ class UtensilCard extends Component {
             <Dropdown.Item 
               active
               eventKey="Cup"
+              title="Cup"
               onSelect={this.props.selectCup}
               onChange={this.props.selectCup}
-            >Cup</Dropdown.Item>
-            <Dropdown.Item href="#">Tablespoon</Dropdown.Item>
-            <Dropdown.Item href="#">Teaspoon</Dropdown.Item>
+            >Cups</Dropdown.Item>
+            <Dropdown.Item href="#">Tablespoons</Dropdown.Item>
+            <Dropdown.Item href="#">Teaspoons</Dropdown.Item>
           </DropdownButton>
           <Form.Control 
             

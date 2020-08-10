@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import measuringspoons from './images/measuringspoons.jpg';
 import CalculationTable from "./components/CalculationTable";
 import UtensilCard from './components/UtensilCard';
-import { cupToTbsp } from './utils/conversion-functions';
+import { cupToTbsp, cupToTsp } from './utils/conversion-functions';
 
 
 
@@ -48,10 +48,11 @@ class App extends Component {
   
   selectCup = e => {
     this.setState({
-      cupMeasurement: cupToTbsp(this.state.measurementInput) 
+      cupMeasurement: this.state.measurementInput,
+      tbspMeasurement: cupToTbsp(this.state.measurementInput),
+      tspMeasurement: cupToTsp(this.state.measurementInput) 
 
     })
-    console.log(cupToTbsp(this.props.measurementInput))
 
   }
   
