@@ -21,8 +21,6 @@ class UtensilCard extends Component {
   
   
   render(){
-    
-    // const dropDownAlert = <Alert variant="warning">{`${this.state.alertStatus} is selected`}</Alert>
     return (        
       <Container fluid="sm">
         <InputGroup className="mb-3">
@@ -31,12 +29,29 @@ class UtensilCard extends Component {
             variant="outline-secondary"
             title="Select a utensil"
             id="input-group-dropdown-1"
-            // onSelect={dropDownAlert}
-            
             >
-            <Dropdown.Item active title="Cup" eventKey="Cup" onSelect={this.props.selectCup} onClick={this.setAlertState}>Cups</Dropdown.Item>
-            <Dropdown.Item eventKey="Tbsp" onSelect={this.props.selectTbsp }>Tablespoons</Dropdown.Item>
-            <Dropdown.Item eventKey="Tsp" onSelect={this.props.selectTsp}>Teaspoons</Dropdown.Item>
+            <Dropdown.Item 
+              active 
+              eventKey="Cup" 
+              title="Cup"
+              onSelect={this.props.selectCup} 
+              onClick={this.setAlertState}
+              >Cups
+            </Dropdown.Item>
+            <Dropdown.Item 
+              eventKey="Tbsp" 
+              title="Tablespoon"
+              onSelect={this.props.selectTbsp}
+              onClick={this.setAlertState}
+              >Tablespoons
+            </Dropdown.Item>
+            <Dropdown.Item 
+              eventKey="Tsp" 
+              title="Teaspoon"
+              onSelect={this.props.selectTsp}
+              onClick={this.setAlertState}  
+              >Teaspoons
+            </Dropdown.Item>
           </DropdownButton>
           <Form.Control 
             
