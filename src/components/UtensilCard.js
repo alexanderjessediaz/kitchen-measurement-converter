@@ -4,34 +4,41 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import DropdownItem from 'react-bootstrap/esm/DropdownItem';
+import Alert from 'react-bootstrap/Alert';
 
 
 class UtensilCard extends Component {
   
+  state = {
+    alertStatus: ""
+  }
   
-  
+  setAlert = e => {
+    this.setState({
+      alertStatus: e
+    })
+  }
   
   render(){
-
-    const isDropDownSelected = Dropdown.Item.active
+    
+    // const dropDownAlert = <Alert variant="warning">{`${this.state.alertStatus} is selected`}</Alert>
     return (        
       <Container fluid="sm">
         <InputGroup className="mb-3">
           <DropdownButton
             as={InputGroup.Prepend}
             variant="outline-secondary"
-            title={isDropDownSelected ? DropdownItem.Item.title: "Select a utensil"}
+            title="Select a utensil"
             id="input-group-dropdown-1"
-            // onSelect={this.handleSelect}
+            // onSelect={dropDownAlert}
             
             >
             <Dropdown.Item 
               active
               eventKey="Cup"
               title="Cup"
-              onSelect={this.props.selectCup}
-              onChange={this.props.selectCup}
+              onSelect={this.props.selectCup && this.setAlert}
+              
             >Cups</Dropdown.Item>
             <Dropdown.Item href="#">Tablespoons</Dropdown.Item>
             <Dropdown.Item href="#">Teaspoons</Dropdown.Item>
@@ -45,9 +52,10 @@ class UtensilCard extends Component {
             onChange={this.props.setMeasurementInput}
             />
         </InputGroup>
+        <Alert variant="warning">{`${this.state.alertStatus} is selected`}</Alert>
        </Container>
       
-    )
+      )
   }
 }
 

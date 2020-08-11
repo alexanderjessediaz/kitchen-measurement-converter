@@ -2,7 +2,7 @@ import React from 'react';
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
 import "../utils/conversion-functions"
-// import { cupToTbsp } from '../utils/conversion-functions';
+
 
 const CalculationTable = props => {
     

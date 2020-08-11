@@ -6,7 +6,10 @@ import Row from 'react-bootstrap/Row';
 import measuringspoons from './images/measuringspoons.jpg';
 import CalculationTable from "./components/CalculationTable";
 import UtensilCard from './components/UtensilCard';
+// import Alert from 'react-bootstrap/Alert';
 import { cupToTbsp, cupToTsp } from './utils/conversion-functions';
+
+
 
 
 
@@ -17,8 +20,10 @@ class App extends Component {
     measurementInput:0,
     cupMeasurement:0,
     tbspMeasurement:0,
-    tspMeasurement:0
+    tspMeasurement:0, 
+    
   };
+
 
   setMeasurementInput = e => {
     this.setState({
@@ -44,15 +49,18 @@ class App extends Component {
       tspMeasurement: tspMeasurement
     })
   }
+
+ 
   
   
   selectCup = e => {
     this.setState({
       cupMeasurement: this.state.measurementInput,
       tbspMeasurement: cupToTbsp(this.state.measurementInput),
-      tspMeasurement: cupToTsp(this.state.measurementInput) 
-
+      tspMeasurement: cupToTsp(this.state.measurementInput),
+      
     })
+    
 
   }
   
@@ -86,6 +94,7 @@ class App extends Component {
                   tbspMeasurement={this.state.tbspMeasurement}
                   tspMeasurement={this.state.tspMeasurement}
                   selectCup={this.selectCup}
+                  setAlertStatus={this.setAlertStatus}
                   setMeasurementInput={this.setMeasurementInput}
                   setCupMeasurement={this.setCupMeasurement}
                   setTbspMeasurement={this.setTbspMeasurement}
