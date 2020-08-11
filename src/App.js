@@ -6,8 +6,7 @@ import Row from 'react-bootstrap/Row';
 import measuringspoons from './images/measuringspoons.jpg';
 import CalculationTable from "./components/CalculationTable";
 import UtensilCard from './components/UtensilCard';
-// import Alert from 'react-bootstrap/Alert';
-import { cupToTbsp, cupToTsp } from './utils/conversion-functions';
+import { cupToTbsp, cupToTsp, tbspToCup, tbspToTsp, tspToCup, tspToTbsp } from './utils/conversion-functions';
 
 
 
@@ -15,54 +14,65 @@ import { cupToTbsp, cupToTsp } from './utils/conversion-functions';
 
 
 class App extends Component {
-
+  
   state = {
     measurementInput:0,
     cupMeasurement:0,
     tbspMeasurement:0,
-    tspMeasurement:0, 
-    
+    tspMeasurement:0,
   };
-
-
+  
   setMeasurementInput = e => {
     this.setState({
       measurementInput: e.target.value
     })
   }
 
-  
-  setCupMeasurement = cupMeasurement => {
+
+  setCupState = cupMeasurement => {
     this.setState({
       cupMeasurement: cupMeasurement
     })
   }
   
-  setTbspMeasurement = tbspMeasurement => {
+  setTbspState = tbspMeasurement => {
     this.setState({
       tbspMeasurement: tbspMeasurement
     })
   }
 
-  setTspMeasurement = tspMeasurement => {
+  setTspState = tspMeasurement => {
     this.setState({
       tspMeasurement: tspMeasurement
     })
   }
 
- 
-  
   
   selectCup = e => {
     this.setState({
       cupMeasurement: this.state.measurementInput,
       tbspMeasurement: cupToTbsp(this.state.measurementInput),
       tspMeasurement: cupToTsp(this.state.measurementInput),
-      
     })
-    
-
   }
+
+  selectTbsp = e => {
+    this.setState({
+      tbspMeasurement: this.state.measurementInput,
+      cupMeasurement: tbspToCup(this.state.measurementInput),
+      tspMeasurement: tbspToTsp(this.state.measurementInput),
+    })
+  }
+
+  selectTsp = e => {
+    this.setState({
+      tspMeasurement: this.state.measurementInput,
+      cupMeasurement: tspToCup(this.state.measurementInput),
+      tbspMeasurement: tspToTbsp(this.state.measurementInput),
+    })
+  }
+
+ 
   
   render(){
     return (
@@ -93,13 +103,15 @@ class App extends Component {
                   cupMeasurement={this.state.cupMeasurement}
                   tbspMeasurement={this.state.tbspMeasurement}
                   tspMeasurement={this.state.tspMeasurement}
+                  setCupState={this.setCupState}
+                  setTbspState={this.setTbspState}
+                  setTspState={this.setTspState}
+                  // setAlertState={this.setAlertState}
+                  // setAlertStatus={this.setAlertStatus}
                   selectCup={this.selectCup}
-                  setAlertStatus={this.setAlertStatus}
+                  selectTbsp={this.selectTbsp}
+                  selectTsp={this.selectTsp}
                   setMeasurementInput={this.setMeasurementInput}
-                  setCupMeasurement={this.setCupMeasurement}
-                  setTbspMeasurement={this.setTbspMeasurement}
-                  setTspMeasurement={this.setTspMeasurement}
-                  
                 />
             </Row>
             <CalculationTable
@@ -107,9 +119,6 @@ class App extends Component {
               cupMeasurement={this.state.cupMeasurement}
               tbspMeasurement={this.state.tbspMeasurement}
               tspMeasurement={this.state.tspMeasurement}
-              // setCupMeasurement={this.setCupMeasurement}
-              // setTbspMeasurement={this.setTbspMeasurement}
-              // setTspMeasurement={this.setTspMeasurement}
             />
         </Container>
       </div>

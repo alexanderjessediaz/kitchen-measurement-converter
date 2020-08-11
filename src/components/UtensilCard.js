@@ -8,16 +8,17 @@ import Alert from 'react-bootstrap/Alert';
 
 
 class UtensilCard extends Component {
-  
+
   state = {
     alertStatus: ""
   }
-  
-  setAlert = e => {
+
+  setAlertState = e => {
     this.setState({
-      alertStatus: e
+      alertStatus: e.target.title
     })
   }
+  
   
   render(){
     
@@ -33,15 +34,9 @@ class UtensilCard extends Component {
             // onSelect={dropDownAlert}
             
             >
-            <Dropdown.Item 
-              active
-              eventKey="Cup"
-              title="Cup"
-              onSelect={this.props.selectCup && this.setAlert}
-              
-            >Cups</Dropdown.Item>
-            <Dropdown.Item href="#">Tablespoons</Dropdown.Item>
-            <Dropdown.Item href="#">Teaspoons</Dropdown.Item>
+            <Dropdown.Item active title="Cup" eventKey="Cup" onSelect={this.props.selectCup} onClick={this.setAlertState}>Cups</Dropdown.Item>
+            <Dropdown.Item eventKey="Tbsp" onSelect={this.props.selectTbsp }>Tablespoons</Dropdown.Item>
+            <Dropdown.Item eventKey="Tsp" onSelect={this.props.selectTsp}>Teaspoons</Dropdown.Item>
           </DropdownButton>
           <Form.Control 
             
