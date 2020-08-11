@@ -28,26 +28,6 @@ class App extends Component {
     })
   }
 
-
-  setCupState = cupMeasurement => {
-    this.setState({
-      cupMeasurement: cupMeasurement
-    })
-  }
-  
-  setTbspState = tbspMeasurement => {
-    this.setState({
-      tbspMeasurement: tbspMeasurement
-    })
-  }
-
-  setTspState = tspMeasurement => {
-    this.setState({
-      tspMeasurement: tspMeasurement
-    })
-  }
-
-  
   selectCup = e => {
     this.setState({
       cupMeasurement: this.state.measurementInput,
@@ -103,11 +83,6 @@ class App extends Component {
                   cupMeasurement={this.state.cupMeasurement}
                   tbspMeasurement={this.state.tbspMeasurement}
                   tspMeasurement={this.state.tspMeasurement}
-                  setCupState={this.setCupState}
-                  setTbspState={this.setTbspState}
-                  setTspState={this.setTspState}
-                  // setAlertState={this.setAlertState}
-                  // setAlertStatus={this.setAlertStatus}
                   selectCup={this.selectCup}
                   selectTbsp={this.selectTbsp}
                   selectTsp={this.selectTsp}
