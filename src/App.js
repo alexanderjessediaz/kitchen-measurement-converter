@@ -8,11 +8,6 @@ import CalculationTable from "./components/CalculationTable";
 import UtensilCard from './components/UtensilCard';
 import { cupToTbsp, cupToTsp, tbspToCup, tbspToTsp, tspToCup, tspToTbsp } from './utils/conversion-functions';
 
-
-
-
-
-
 class App extends Component {
   
   state = {
@@ -71,7 +66,7 @@ class App extends Component {
                   <Media.Body>
                     <h5>Kitchen Measurement Converter</h5>
                     <p>
-                      Enter a measurement then select utensil and see all of the converted measuremtns in the table below.
+                      Enter a measurement then select a utensil to see all of the converted utensil measurements in the table below.
                     </p>
                   </Media.Body>
                 </Media>
